@@ -29,6 +29,7 @@ else
                         then
                             git pull origin main
                             echo "Binary Updated"
+                            
                     fi
             else
                 echo "No new update found"
