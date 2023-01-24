@@ -105,17 +105,19 @@ else
     }
 
     peerconnect() {
-
-        while [[ -z $x || "$x" =~ ( ) ]]
+        loop=0
+        while [ $loop = 0 ]
             do
                 echo "Enter Your Node Name: "
                 read x
                 if [ -z "$x" ]
                     then
                         echo "Please enter your node name it can't be null"
-                elif [[ "$x" =~ ( ) ]]  
+                elif echo $x | grep -E '[ ]' >/dev/null  
                     then
                         echo "Node name should not contain spaces in it"
+                else
+                    loop=1
                 fi
             done
 
